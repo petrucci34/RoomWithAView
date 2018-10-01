@@ -8,19 +8,13 @@ import android.arch.persistence.room.Query;
 import java.util.List;
 
 @Dao
-public class WordDao {
+public abstract class WordDao {
     @Insert
-    void insert(Word word) {
-
-    }
+    abstract void insert(Word word);
 
     @Query("DELETE FROM word_table")
-    void deleteAll() {
-
-    }
+    abstract void deleteAll();
 
     @Query("SELECT * from word_table ORDER BY word ASC")
-    LiveData<List<Word>> getAllWords() {
-        return null;
-    }
+    abstract LiveData<List<Word>> getAllWords();
 }
