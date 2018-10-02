@@ -18,7 +18,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
             super.onOpen(database);
             new PopulateDatabaseAsync(INSTANCE).execute();
         }
-    }
+    };
 
     private static class PopulateDatabaseAsync extends AsyncTask<Void, Void, Void> {
         private final WordDao dao;
